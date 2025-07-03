@@ -109,6 +109,20 @@ python examples/run_hierarchical_emoclassifiers_v1.py \
     --aggregation_mode <aggregation-mode: any | all | adjusted>
 ```
 
+
+### SocialClassifiers Classification
+
+To run the set of Prosocial and Socially Improper Behaviors classifiers (SocialClassifiers) described in [Fang et al. (2025)](https://www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study/), you will first need to clone the repository here: https://github.com/mitmedialab/chatbot-psychosocial-study.
+
+You can then run the following sample script to classify conversation based on the classifiers. Note that this set of classifiers only apply to assistant messages.
+
+```bash
+python examples/run_social_classifiers.py \
+    --input_path ./assets/example_conversations.jsonl \
+    --output_path ./example_results_social.jsonl \
+    --classifiers_path /path/to/chatbot-psychosocial-study/assets/definitions/social_classifiers.json
+```
+
 ## Overview of Code
 
 - `emoclassifiers/classification.py` contains the core logic for the classifiers.
@@ -118,10 +132,23 @@ python examples/run_hierarchical_emoclassifiers_v1.py \
 - `assets/definitions` contains the definitions for EmoClassifiersV1 and EmoClassifiersV2, as well as the dependency graph for EmoClassifiersV1 between top-level and sub-classifiers.
 
 ## Citation
+
+To cite our paper and the EmoClassifiers:
+
 ```
 @misc{phang2025affective,
       author={Phang, Jason and Lampe, Michael and Ahmad, Lama and Agarwal, Sandhini and Fang, Cathy Mengying and Liu, Auren R. and Danry, Valdemar and Lee, Eunhae and Chan, Samantha W.T and Pataranutaporn, Pat and Maes, Pattie},
       title={{Investigating Affective Use and Emotional Well-being in ChatGPT}},
+      year={2025},
+}
+```
+
+To cite MIT Media Lab's SocialClassifiers:
+
+```
+@misc{fang2025psychosocial,
+      author={Fang, Cathy Mengying and Liu, Auren R and Danry, Valdemar and Lee, Eunhae and Chan, Samantha W.T and Pataranutaporn, Pat and Maes, Pattie and Phang, Jason and Lampe, Michael and Ahmad, Lama and Agarwal, Sandhini},
+      title={{How AI and Human Behaviors Shape Psychosocial Effects of Chatbot Use: A Longitudinal Randomized Controlled Study}},
       year={2025},
 }
 ```
