@@ -90,7 +90,7 @@ For instance, you can run the following command to classify all EmoClassifiersV2
 
 ```bash
 python examples/run_simple_classification.py \
-    --input_path ./assets/example_conversations.jsonl \
+    --input_path ./emoclassifiers/assets/example_conversations.jsonl \
     --output_path ./example_results.jsonl \
     --classifier_set v2
 ```
@@ -116,7 +116,7 @@ You can then run the following sample script to classify conversation based on t
 
 ```bash
 python examples/run_social_classifiers.py \
-    --input_path ./assets/example_conversations.jsonl \
+    --input_path ./emoclassifiers/assets/example_conversations.jsonl \
     --output_path ./example_results_social.jsonl \
     --classifiers_path /path/to/chatbot-psychosocial-study/assets/definitions/social_classifiers.json
 ```
