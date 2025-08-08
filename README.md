@@ -9,8 +9,7 @@ As decribed in the paper, these classifiers may misclassify conversations, but t
 The installation is straightforward and the only dependency is the OpenAI client.
 
 ```
-pip install -r requirements.txt
-pip install -e .
+pip install git+https://github.com/openai/emoclassifiers.git
 ```
 
 You can also skip installation if you modify your `PYTHONPATH` accordingly, or run the code directly from the repository.
@@ -108,7 +107,6 @@ python examples/run_hierarchical_emoclassifiers_v1.py \
     --output_path <path-to-output-results> \
     --aggregation_mode <aggregation-mode: any | all | adjusted>
 ```
-
 
 ### SocialClassifiers Classification
 
